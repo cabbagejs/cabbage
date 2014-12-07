@@ -31,7 +31,7 @@ $ cd my-project
 $ cabbage run
 ```
 
-To start the broccoli server, you can run either `broccoli serve` or `cabbage run` and visit your application at [localhost:8000](http://localhost:8000)
+To start the broccoli server, you can run `cabbage run` and visit your application at [localhost:8000](http://localhost:8000)
 
 ## The name
 
