@@ -1,6 +1,6 @@
 {
   "name": "cabbage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A little conventional project for Broccoli",
   "main": "index.js",
   "author": {
