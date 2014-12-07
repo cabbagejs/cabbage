@@ -4,7 +4,7 @@ rimraf = require('rimraf')
 copyDereferenceSync = require('copy-dereference').sync
 
 module.exports = (outputDir = "dist", cb = defaultCb) ->
-  process.env['CABBAGE_ENV'] = 'production'
+  process.env['CABBAGE_ENV'] ||= 'production'
   rimraf.sync(path.resolve(process.cwd(), outputDir))
   builder = new broccoli.Builder(broccoli.loadBrocfile())
   builder.build()
