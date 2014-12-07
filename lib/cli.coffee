@@ -3,6 +3,7 @@ module.exports = ->
     when 'run' then require('./commands/run')()
     when 'build' then require('./commands/build')()
     when 'spec' then require('./commands/spec')()
+    when 'spec-ci' then require('./commands/spec-ci')()
     else
       console.error(helpText())
       process.exit(1)
@@ -19,5 +20,7 @@ helpText = ->
 
       run               start a broccoli server on port 8000
       build             build the project to the `dist` directory
+      spec              run the project's tests in an ongoing testem process
+      spec-ci           run the project's tests in a headless CI testem process
 
   """
