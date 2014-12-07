@@ -2,6 +2,7 @@ module.exports = ->
   switch command()
     when 'run' then require('./commands/run')()
     when 'build' then require('./commands/build')()
+    when 'spec' then require('./commands/spec')()
     else
       console.error(helpText())
       process.exit(1)

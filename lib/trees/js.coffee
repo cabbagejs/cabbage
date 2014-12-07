@@ -1,6 +1,7 @@
 staticCompiler = require('broccoli-static-compiler')
 mergeTrees = require('broccoli-merge-trees')
 broccoliConcat = require('broccoli-concat')
+exportTree = require('broccoli-export-tree')
 
 files = require('./../build-file-config')()
 env = require('./../env')()
@@ -12,13 +13,16 @@ module.exports = ->
   js = merge(
     sourceTree("vendor/js"),
     sourceTree("app/js"),
-    sourceTree("spec", env == "development")
+    sourceTree("spec", env != "production")
   )
 
-  merge(
+  concatenated = merge(
     concat(js, "app"),
-    concat(js, "spec", env == "development"),
+    concat(js, "spec", env != "production")
   )
+
+  exportTree concatenated,
+    destDir: 'generated'
 
 merge = (trees...) ->
   mergeTrees(_(trees).compact())
