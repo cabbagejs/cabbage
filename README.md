@@ -37,4 +37,4 @@ To start the broccoli server, you can run either `broccoli serve` or `cabbage ru
 
 The Broccoli vegetable we all know and love is the flowering head of a particular species of cabbage.
 
-The Broccoli is apparently named after its tree-based domain model and API. Because this project seeks to be a foundational wrapper around broccoli, the name cabbage seemed appropriate.
+Broccoli.js is apparently named after its tree-based domain model and API. Because this project seeks to be a foundational wrapper around broccoli, the name cabbage seemed appropriate.
