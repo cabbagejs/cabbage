@@ -13,16 +13,18 @@ module.exports = ->
   js = merge(
     sourceTree("vendor/js"),
     sourceTree("app/js"),
-    sourceTree("spec", env != "production")
+    sourceTree("spec", notProduction())
   )
 
   concatenated = merge(
     concat(js, "app"),
-    concat(js, "spec", env != "production")
+    concat(js, "spec", notProduction())
+  )
+  merge(
+    concatenated,
+    exportTree(concatenated, destDir: 'generated') if notProduction()
   )
 
-  exportTree concatenated,
-    destDir: 'generated'
 
 merge = (trees...) ->
   mergeTrees(_(trees).compact())
@@ -40,3 +42,5 @@ concat = (jsTree, name, include = true) ->
     outputFile: "/js/#{name}.js"
     wrapInFunction: false
     allowNone: true
+
+notProduction = -> env != "production"
