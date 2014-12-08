@@ -34,6 +34,33 @@ $ cabbage run
 
 To start the broccoli server, you can run `cabbage run` and visit your application at [localhost:8000](http://localhost:8000)
 
+## Working on cabbage
+
+To work on cabbage, you'll need a few things in place, including a working Node.js installation. Then:
+
+```
+mkdir cabbagejs
+cd cabbagejs
+git clone git@github.com:cabbagejs/cabbage.git
+git clone git@github.com:cabbagejs/cabbage-cli.git
+git clone git@github.com:cabbagejs/blueprint-simple.git
+
+cd cabbage
+npm install
+
+cd ../cabbage-cli
+npm install
+npm link
+
+cd ../blueprint-simple
+npm install --save-dev broccoli
+ln -s ../../cabbage node_modules/cabbage
+cabbage build
+tree dist
+```
+
+
+
 ## The name
 
 The Broccoli vegetable we all know and love is the flowering head of a particular species of cabbage.
