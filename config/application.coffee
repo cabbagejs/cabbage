@@ -22,5 +22,5 @@ module.exports = ->
 
   pages:
     context:
-      js: "<%= files.js.minified %>"
-      css: "<%= files.css.minified %>"
+      js: "<%= files.js.minifiedWebRelative %>"
+      css: "<%= files.css.minifiedWebRelative %>"

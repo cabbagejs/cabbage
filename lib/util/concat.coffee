@@ -8,7 +8,7 @@ NAMESPACE = "cabbage"
 
 module.exports = (inputTree, dest, bundles) ->
   merge(_(bundles).map (bundle, name) ->
-    return unless _(bundle.env).include(env)
+    return if bundle.env? && !_(bundle.env).include(env)
     broccoliConcat inputTree,
       inputFiles: _(bundle.files).map (path) -> "#{NAMESPACE}/#{path}"
       outputFile: "/#{dest}/#{name}.js"
