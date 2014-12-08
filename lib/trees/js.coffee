@@ -1,46 +1,22 @@
-staticCompiler = require('broccoli-static-compiler')
-mergeTrees = require('broccoli-merge-trees')
-broccoliConcat = require('broccoli-concat')
+merge = require('./../util/merge')
+pick = require('./../util/pick')
+concat = require('./../util/concat')
+
 exportTree = require('broccoli-export-tree')
 
-files = require('./../build-file-config')()
-env = require('./../env')()
-_ = require('underscore')
-
-NAMESPACE = "cabbage/js"
+config = require('./../build-config')()
+env = require('./../util/env')()
 
 module.exports = ->
   js = merge(
-    sourceTree("vendor/js"),
-    sourceTree("app/js"),
-    sourceTree("spec", notProduction())
+    pick("vendor/js"),
+    pick("app/js"),
+    pick("spec", env != "production")
   )
 
-  concatenated = merge(
-    concat(js, "app"),
-    concat(js, "spec", notProduction())
-  )
+  concatenated = concat(js, "js", config.concat.js)
+
   merge(
     concatenated,
-    exportTree(concatenated, destDir: 'generated') if notProduction()
+    exportTree(concatenated, destDir: 'generated') if env != "production"
   )
-
-
-merge = (trees...) ->
-  mergeTrees(_(trees).compact())
-
-sourceTree = (name, include = true) ->
-  return if !include
-  staticCompiler name,
-    srcDir: '/'
-    destDir: "#{NAMESPACE}/#{name}"
-
-concat = (jsTree, name, include = true) ->
-  return if !include
-  broccoliConcat jsTree,
-    inputFiles: _(files.concat.js[name]).map (path) -> "#{NAMESPACE}/#{path}"
-    outputFile: "/js/#{name}.js"
-    wrapInFunction: false
-    allowNone: true
-
-notProduction = -> env != "production"

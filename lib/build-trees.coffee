@@ -1,4 +1,6 @@
-mergeTrees = require('broccoli-merge-trees')
+merge = require('./util/merge')
 
 module.exports = ->
-  mergeTrees([require('./trees/js')()])
+  merge(
+    require('./trees/js')()
+  )
