@@ -59,6 +59,8 @@ cabbage build
 tree dist
 ```
 
+Then if you want to help out just pick out an issue that's been [marked ready in the waffle board](https://waffle.io/cabbagejs/cabbage).
+
 
 
 ## The name
