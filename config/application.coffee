@@ -1,6 +1,7 @@
 # Exports an object that defines
 #   all of the app config that the project
 #   is concerned with.
+
 module.exports = ->
   concat:
     js:
@@ -18,3 +19,8 @@ module.exports = ->
           "<%= files.js.specHelpers %>"
           "<%= files.js.spec %>"
         ]
+
+  pages:
+    context:
+      js: "<%= files.js.minified %>"
+      css: "<%= files.css.minified %>"

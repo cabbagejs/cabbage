@@ -4,7 +4,7 @@ concat = require('./../util/concat')
 
 exportTree = require('broccoli-export-tree')
 
-config = require('./../build-config')()
+config = require('./../util/config')()
 env = require('./../util/env')()
 
 module.exports = ->
