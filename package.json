@@ -12,6 +12,7 @@
     "url": "https://github.com/cabbagejs/cabbage.git"
   },
   "dependencies": {
+    "broccoli-coffee": "^0.3.0",
     "broccoli-concat": "0.0.12",
     "broccoli-env": "0.0.1",
     "broccoli-export-tree": "^0.3.2",
