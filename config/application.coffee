@@ -18,3 +18,8 @@ module.exports = ->
           "<%= files.js.specHelpers %>"
           "<%= files.js.spec %>"
         ]
+
+  # example for trees/pages
+  # pages:
+  #   context:
+  #     title: "Jeff's Jazzy Framework"
