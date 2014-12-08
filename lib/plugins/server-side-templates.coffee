@@ -1,20 +1,14 @@
 Filter = require('broccoli-filter')
 
-module.exports = ServerSideTemplateFilter = (inputTree, options) ->
-  if this instanceof ServerSideTemplateFilter
+module.exports = class ServerSideTemplateFilter extends Filter
+  targetExtension: 'html'
+
+  constructor: (inputTree, options) ->
+    return new ServerSideTemplateFilter(inputTree, options) unless this instanceof ServerSideTemplateFilter
     @inputTree = inputTree
     @extensions = options.extensions
     @compileFunction = options.compileFunction
     @context = options.context
-    return undefined
-  else
-    new ServerSideTemplateFilter(inputTree, options)
 
-
-ServerSideTemplateFilter.prototype = Object.create(Filter.prototype)
-ServerSideTemplateFilter::constructor = ServerSideTemplateFilter
-
-ServerSideTemplateFilter::targetExtension = 'html'
-
-ServerSideTemplateFilter::processString = (string) ->
-  @compileFunction(string)(@context)
+  processString: (string) ->
+    @compileFunction(string)(@context)
