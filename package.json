@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/cabbagejs/cabbage.git"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/testem ci -f test/config.json",
+    "test-dev": "./node_modules/.bin/testem -f test/config.json"
+  },
   "dependencies": {
     "broccoli-coffee": "^0.3.0",
     "broccoli-concat-cabbage": "0.0.1",
@@ -33,5 +37,10 @@
   "keywords": [
     "broccoli",
     "happiness"
-  ]
+  ],
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1",
+    "mocha-given": "^0.1.3"
+  }
 }
