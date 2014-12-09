@@ -39,8 +39,8 @@
     "happiness"
   ],
   "devDependencies": {
-    "broccoli": "^0.13.3",
-    "cabbage-cli": "https://github.com/cabbagejs/cabbage-cli.git",
+    "broccoli": "*",
+    "cabbage-cli": "*",
     "chai": "^1.10.0",
     "mkdirp": "^0.5.0",
     "mocha": "^2.0.1",
