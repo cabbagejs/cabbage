@@ -47,14 +47,16 @@ git clone git@github.com:cabbagejs/blueprint-simple.git
 
 cd cabbage
 npm install
+npm link
 
 cd ../cabbage-cli
+npm link cabbage
 npm install
 npm link
 
 cd ../blueprint-simple
 npm install --save-dev broccoli
-ln -s ../../cabbage node_modules/cabbage
+npm link cabbage
 cabbage build
 tree dist
 ```
