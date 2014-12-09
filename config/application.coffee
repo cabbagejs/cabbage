@@ -24,6 +24,7 @@ module.exports = ->
       app:
         files: [
           "<%= files.css.vendor %>"
+          "<%= files.sass.generatedApp %>"
           "<%= files.css.app %>"
         ]
 

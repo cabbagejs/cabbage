@@ -7,3 +7,5 @@ module.exports = (path, include = true, customNamespace = null) ->
   staticCompiler path,
     srcDir: '/'
     destDir: customNamespace || "#{NAMESPACE}/#{path}"
+
+module.exports.namespace = NAMESPACE

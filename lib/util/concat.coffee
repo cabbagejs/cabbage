@@ -1,4 +1,4 @@
-broccoliConcat = require('broccoli-concat')
+broccoliConcat = require('broccoli-concat-cabbage')
 _ = require('underscore')
 
 merge = require('./../util/merge')

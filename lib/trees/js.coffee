@@ -1,5 +1,3 @@
-_ = require('underscore')
-
 exportTree = require('broccoli-export-tree')
 coffee = require('broccoli-coffee')
 
@@ -10,15 +8,14 @@ config = require('./../util/config')()
 env = require('./../util/env')()
 templates = require('./templates')
 
-
 module.exports = ->
-  js = coffee(merge(
+  scripts = coffee(merge(
     pick("vendor/js"),
     merge(pick("app/js"), templates()),
     pick("spec", env != "production")
   ))
 
-  concatenated = concat(js, "js", config.concat.js)
+  concatenated = concat(scripts, "js", config.concat.js)
 
   merge(
     concatenated,

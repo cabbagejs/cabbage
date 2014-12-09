@@ -3,7 +3,7 @@ _ = require('underscore')
 clientSideTemplates = require('./../plugins/client-side-templates')
 pick = require('./../util/pick')
 
-NAMESPACE = "cabbage/app/js/templates"
+NAMESPACE = "#{pick.namespace}/app/js/templates"
 
 module.exports = ->
   clientSideTemplates pick("app/templates", true, NAMESPACE),
