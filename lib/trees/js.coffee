@@ -1,17 +1,20 @@
-merge = require('./../util/merge')
-pick = require('./../util/pick')
-concat = require('./../util/concat')
+_ = require('underscore')
 
 exportTree = require('broccoli-export-tree')
 coffee = require('broccoli-coffee')
 
+merge = require('./../util/merge')
+pick = require('./../util/pick')
+concat = require('./../util/concat')
 config = require('./../util/config')()
 env = require('./../util/env')()
+templates = require('./templates')
+
 
 module.exports = ->
   js = coffee(merge(
     pick("vendor/js"),
-    pick("app/js"),
+    merge(pick("app/js"), templates()),
     pick("spec", env != "production")
   ))
 

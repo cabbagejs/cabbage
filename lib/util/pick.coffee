@@ -2,8 +2,8 @@ staticCompiler = require('broccoli-static-compiler')
 
 NAMESPACE = "cabbage"
 
-module.exports = (name, include = true) ->
+module.exports = (path, include = true, customNamespace = null) ->
   return if !include
-  staticCompiler name,
+  staticCompiler path,
     srcDir: '/'
-    destDir: "#{NAMESPACE}/#{name}"
+    destDir: customNamespace || "#{NAMESPACE}/#{path}"
