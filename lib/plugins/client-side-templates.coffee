@@ -1,5 +1,4 @@
 Filter = require('broccoli-filter')
-jsStringEscape = require('js-string-escape')
 
 module.exports = class ClientSideTemplateFilter extends Filter
   targetExtension: 'js'
