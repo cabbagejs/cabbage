@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "broccoli-coffee": "^0.3.0",
-    "broccoli-concat": "0.0.12",
+    "broccoli-concat-cabbage": "0.0.1",
     "broccoli-env": "0.0.1",
     "broccoli-export-tree": "^0.3.2",
     "broccoli-filter": "^0.1.10",

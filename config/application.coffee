@@ -20,6 +20,13 @@ module.exports = ->
           "<%= files.js.spec %>"
         ]
 
+    css:
+      app:
+        files: [
+          "<%= files.css.vendor %>"
+          "<%= files.css.app %>"
+        ]
+
   pages:
     context:
       js: "<%= files.js.minifiedWebRelative %>"

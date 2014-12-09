@@ -11,7 +11,7 @@ module.exports = (inputTree, dest, bundles) ->
     return if bundle.env? && !_(bundle.env).include(env)
     broccoliConcat inputTree,
       inputFiles: _(bundle.files).map (path) -> "#{NAMESPACE}/#{path}"
-      outputFile: "/#{dest}/#{name}.js"
+      outputFile: "/#{dest}/#{name}.#{dest}"
       wrapInFunction: false
       allowNone: true
   )
