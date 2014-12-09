@@ -8,7 +8,6 @@ build = require('./../lib/commands/build')
 
 
 before (done) ->
-  console.log 'a'
   @timeout(30000)
   tmp.setCwd()
   createCabbageProject "pants", ->
@@ -16,7 +15,6 @@ before (done) ->
     done()
 
 after ->
-  console.log 'e'
   @timeout(10000)
   tmp.resetCwd()
   tmp.clean()
