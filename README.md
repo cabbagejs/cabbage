@@ -1,4 +1,6 @@
 [![Stories in Ready](https://badge.waffle.io/cabbagejs/cabbage.png?label=ready&title=Ready)](https://waffle.io/cabbagejs/cabbage)
+[![Build Status](https://travis-ci.org/cabbagejs/cabbage.svg?branch=master)](https://travis-ci.org/cabbagejs/cabbage)
+
 # cabbage
 
 Cabbage is a CLI for working with simple web applications built with [Broccoli](https://github.com/broccolijs/broccoli).
