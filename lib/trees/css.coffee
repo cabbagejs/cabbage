@@ -1,9 +1,10 @@
-
+minifier = require('broccoli-clean-css')
 
 merge = require('./../util/merge')
 pick = require('./../util/pick')
 concat = require('./../util/concat')
 config = require('./../util/config')()
+
 
 module.exports = ->
   styles = merge(
@@ -11,7 +12,7 @@ module.exports = ->
     pick("app/css")
   )
 
-  concat(merge(styles, sassTree(styles)), "css", config.concat.css)
+  minifier(concat(merge(styles, sassTree(styles)), "css", config.concat.css), {})
 
 _ = require('underscore')
 sass = require('broccoli-sass')
