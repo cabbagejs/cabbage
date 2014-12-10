@@ -16,6 +16,7 @@
     "test-dev": "./node_modules/.bin/testem -f test/config.json"
   },
   "dependencies": {
+    "broccoli-clean-css": "^0.3.0",
     "broccoli-coffee": "^0.3.0",
     "broccoli-concat-cabbage": "0.0.1",
     "broccoli-env": "0.0.1",
