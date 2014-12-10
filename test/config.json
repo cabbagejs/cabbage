@@ -1,0 +1,9 @@
+{
+  "launchers": {
+    "Node": {
+      "command": "./node_modules/.bin/mocha --recursive -u mocha-given --compilers coffee:coffee-script/register test"
+    }
+  },
+  "launch_in_dev": ["Node"],
+  "launch_in_ci": ["Node"]
+}
