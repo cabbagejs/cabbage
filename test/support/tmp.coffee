@@ -15,8 +15,10 @@ module.exports = tmp =
   clean: ->
     rimraf.sync(p)
 
+  originalCwd: -> cwd
+
   setCwd: (subPath = "") ->
     process.chdir(path.resolve(tmp.path(), subPath))
 
   resetCwd: ->
-    process.chdir(cwd)
+    process.chdir(tmp.originalCwd())
