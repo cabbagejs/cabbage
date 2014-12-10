@@ -1,10 +1,9 @@
-minifier = require('broccoli-clean-css')
+minifier = require('./../util/css/minifier')
 
 merge = require('./../util/merge')
 pick = require('./../util/pick')
 concat = require('./../util/concat')
 config = require('./../util/config')()
-
 
 module.exports = ->
   styles = merge(
