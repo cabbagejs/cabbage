@@ -11,7 +11,7 @@ module.exports = ->
     pick("app/css")
   )
 
-  minifier(concat(merge(styles, sassTree(styles)), "css", config.concat.css), {})
+  minifier(concat(merge(styles, sassTree(styles)), "css", config.concat.css))
 
 _ = require('underscore')
 sass = require('broccoli-sass')

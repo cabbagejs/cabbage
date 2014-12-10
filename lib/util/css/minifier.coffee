@@ -1,10 +1,7 @@
-cssCleaner = require('broccoli-clean-css')
+cleanCss = require('broccoli-clean-css')
 
 env = require('./../env')()
 
-module.exports = (inputTree, options) ->
-  resultingTree = inputTree
-
-  resultingTree = cssCleaner(inputTree, options) if env == "production"
-
-  resultingTree
+module.exports = (inputTree, options = {}) ->
+  return inputTree unless env == "production"
+  cleanCss(inputTree, options)
