@@ -12,7 +12,7 @@
     "url": "https://github.com/cabbagejs/cabbage.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/testem ci -f test/config.json",
+    "test": "./node_modules/.bin/mocha --recursive -u mocha-given --compilers coffee:coffee-script/register test",
     "test-dev": "./node_modules/.bin/testem -f test/config.json"
   },
   "dependencies": {
