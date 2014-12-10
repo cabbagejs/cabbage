@@ -10,19 +10,18 @@ module.exports = (outputDir = "dist", cb = defaultCb) ->
   builder.build()
     .then (hash) ->
       copyDereferenceSync(hash.directory, outputDir)
-    .finally ->
-      builder.cleanup()
-    .then ->
-      cb(null)
+      cb(null, builder)
+
     .catch (err) ->
-      # Should show file and line/col if present
       console.error('File: ' + err.file) if err.file?
       console.error(err.stack)
       console.error('\nBuild failed')
-      cb(err)
+      cb(err, builder)
 
-defaultCb = (err) ->
-  if err
-    process.exit(1)
-  else
-    process.exit(0)
+
+defaultCb = (err, builder) ->
+  builder.cleanup().finally ->
+    if err
+      process.exit(1)
+    else
+      process.exit(0)
