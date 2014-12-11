@@ -8,7 +8,7 @@ describe 'JavaScript', ->
 
   context "Concatenation", ->
     Then -> expect(@result).to.contain("Hello, World!")
-    And -> expect(@result).to.contain("JST['hello.us']")
+    And -> expect(@result).to.contain("""JST["hello.us"]""")
     And -> expect(@result).to.contain("nativeForEach")
 
   context 'Uglification', ->
@@ -21,3 +21,5 @@ describe 'JavaScript', ->
     Then -> expect(@result).to.contain("Another great test")
     And -> expect(@result).not.to.contain("this is a comment")
     And -> expect(@result).not.to.contain("and is this")
+    And -> expect(@result).not.to.contain("//")
+    And -> expect(@result).not.to.contain("/*")
