@@ -45,12 +45,12 @@ module.exports = ->
     source: "app/pages/**/*.*"
 
   img:
-    app: "app/img/**/*.*"
-    vendor: "vendor/img/**/*.*"
+    app: "app/img"
+    vendor: "vendor/img"
     root: "img"
 
   webfonts:
-    vendor: "vendor/webfonts/**/*.*"
+    vendor: "vendor/webfonts"
     root: "webfonts"
 
   assetFingerprint:

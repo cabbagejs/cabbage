@@ -6,6 +6,7 @@ global.Finally = after
 global.expect = require('chai').expect
 global.fs = require('fs')
 global.addFile = require('./add-file')
+global.readFile = require('./read-file')
 
 # Create a project for all the tests to run in and use
 createCabbageProject = require('./create-cabbage-project')
