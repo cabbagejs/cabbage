@@ -1,8 +1,11 @@
 module.exports = ->
-  js:
-    uglify:
-      enable: true
-
-  css:
-    minify:
-      enable: true
+  pipeline:
+    js:
+      uglify:
+        enable: true
+      concat:
+        specs:
+          enable: true
+    css:
+      minify:
+        enable: true

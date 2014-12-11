@@ -13,7 +13,7 @@ module.exports = ->
   scripts = coffee(merge(
     pick("vendor/js"),
     merge(pick("app/js"), templates()),
-    pick("spec", env != "production")
+    pick("spec", config.pipeline.js.concat.specs.enable)
   ))
 
   concatenated = concat(scripts, "js", config.concat.js)
