@@ -5,4 +5,5 @@ module.exports = ->
     require('./trees/js')(),
     require('./trees/css')(),
     require('./trees/pages')(),
+    require('./trees/static')()
   )
