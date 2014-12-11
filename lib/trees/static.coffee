@@ -7,7 +7,7 @@ module.exports = ->
   merge(
     pick('vendor/static', true, '/'),
     pick('app/static', true, '/'),
-    pick('vendor/img', true, config.files.img.root),
-    pick('app/img', true, config.files.img.root),
-    pick('vendor/webfonts', true, config.files.webfonts.root)
+    pick(config.files.img.vendor, true, config.files.img.root),
+    pick(config.files.img.app, true, config.files.img.root),
+    pick(config.files.webfonts.vendor, true, config.files.webfonts.root)
   )
