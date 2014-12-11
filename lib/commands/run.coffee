@@ -1,4 +1,5 @@
-broccoli = require(require('resolve').sync('broccoli', basedir: process.cwd()))
+userRequire = require('./../util/user-require')
+broccoli = userRequire('broccoli')
 
 module.exports = ->
   process.env['CABBAGE_ENV'] ||= 'development'

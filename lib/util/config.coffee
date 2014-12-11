@@ -1,13 +1,13 @@
 extend = require('config-extend')
-resolve = require('resolve')
 
 evaluateTemplateTree = require('./../evaluate-template-tree')
+userRequire = require('./user-require')
 
 masterFileConfig = require('./../../config/files')
 masterAppConfig = require('./../../config/application')
-userFileConfig = require(resolve.sync('./config/files', basedir: process.cwd()))
-userAppConfig = require(resolve.sync('./config/application', basedir: process.cwd()))
-userEnvConfig = require(resolve.sync("./config/#{require('./env')()}", basedir: process.cwd()))
+userFileConfig = userRequire('./config/files')
+userAppConfig = userRequire('./config/application')
+userEnvConfig = userRequire("./config/#{require('./env')()}")
 
 module.exports = ->
   config = extend(masterAppConfig(), files: masterFileConfig(), userAppConfig(), files:userFileConfig(), userEnvConfig())
