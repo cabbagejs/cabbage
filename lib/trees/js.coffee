@@ -7,6 +7,7 @@ concat = require('./../util/concat')
 config = require('./../util/config')()
 env = require('./../util/env')()
 templates = require('./templates')
+uglify = require('./../util/js/uglify')
 
 module.exports = ->
   scripts = coffee(merge(
@@ -17,7 +18,7 @@ module.exports = ->
 
   concatenated = concat(scripts, "js", config.concat.js)
 
-  merge(
+  uglify(merge(
     concatenated,
     exportTree(concatenated, destDir: 'generated') if env != "production"
-  )
+  ))
