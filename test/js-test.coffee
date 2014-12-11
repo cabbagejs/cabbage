@@ -12,7 +12,7 @@ describe 'JavaScript', ->
     And -> expect(@result).to.contain("nativeForEach")
 
   context 'Uglification', ->
-    Given -> addFile 'app/js/comments.js', """
+    Around -> addFile 'app/js/comments.js', """
       // this is a comment
       /* and is this */
       var thisExample = "Another great test";

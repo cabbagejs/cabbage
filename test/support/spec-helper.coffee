@@ -1,12 +1,14 @@
 # In this suite, Given will be unusable so `before` (all) is used until this is fixed: https://github.com/rendro/mocha-given/issues/2
 global.Initially = before
 global.Finally = after
+global.Around = require('./around')
 
 # Lazy global conveniences are lazy
 global.expect = require('chai').expect
 global.fs = require('fs')
 global.addFile = require('./add-file')
 global.readFile = require('./read-file')
+global.replaceFile = require('./replace-file')
 
 # Create a project for all the tests to run in and use
 createCabbageProject = require('./create-cabbage-project')

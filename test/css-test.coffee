@@ -9,7 +9,7 @@ describe 'CSS', ->
     Then -> expect(@result).to.contain("background-color:#efefef")
 
   context 'Sass', ->
-    Given -> addFile 'app/css/main.sass', """
+    Around -> addFile 'app/css/main.sass', """
       body
         width: 80%
       """
