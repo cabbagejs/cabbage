@@ -1,6 +1,6 @@
 broccoli = require(require('resolve').sync('broccoli', basedir: process.cwd()))
 
-module.exports = (outputDir = "dist") ->
+module.exports = ->
   process.env['CABBAGE_ENV'] ||= 'development'
   builder = new broccoli.Builder(broccoli.loadBrocfile())
   broccoli.server.serve builder,
