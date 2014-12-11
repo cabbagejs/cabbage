@@ -1,8 +1,8 @@
 _ = require('underscore')
-config = require('./util/config')()
+config = require('./util/config')
 
 module.exports = (configPath = undefined) ->
-  traverse(configPath?.split('.'), config)
+  traverse(configPath?.split('.'), config())
 
 traverse = (paths, obj) ->
   if !obj? || !paths? || paths.length == 0
