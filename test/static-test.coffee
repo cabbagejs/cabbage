@@ -25,3 +25,12 @@ describe 'Static file paths', ->
     describe 'vendor/webfonts', ->
       Given -> addFile('vendor/webfonts/e', 'E')
       Then -> readFile('dist/webfonts/e') == 'E'
+
+  describe 'sub directories', ->
+    describe 'app/static/subdir', ->
+      Given -> addFile('app/static/subdir/f', 'F')
+      Then -> readFile('app/static/subdir/f') == 'F'
+
+    describe 'vendor/static/subdir', ->
+      Given -> addFile('vendor/static/subdir/g', 'G')
+      Then -> readFile('vendor/static/subdir/g') == 'G'
