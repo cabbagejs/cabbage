@@ -1,7 +1,7 @@
 uglifyJs = require('broccoli-uglify-js');
 
-env = require('./../env')()
+config = require('./../config')()
 
 module.exports = (inputTree, options = {}) ->
-  return inputTree unless env == "production"
+  return inputTree unless config.js.uglify.enable
   uglifyJs(inputTree, options)

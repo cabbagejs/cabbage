@@ -1,7 +1,7 @@
 cleanCss = require('broccoli-clean-css')
 
-env = require('./../env')()
+config = require('./../config')()
 
 module.exports = (inputTree, options = {}) ->
-  return inputTree unless env == "production"
+  return inputTree unless config.css.minify.enable
   cleanCss(inputTree, options)
