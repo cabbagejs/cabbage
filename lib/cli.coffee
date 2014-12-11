@@ -24,6 +24,6 @@ helpText = ->
       build             build the project to the `dist` directory
       spec              run the project's tests in an ongoing testem process
       spec-ci           run the project's tests in a headless CI testem process
-      config            displays the project's configuration
+      config <path>     displays the project's configuration, limited to a path if provided
 
   """
