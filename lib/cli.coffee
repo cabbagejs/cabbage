@@ -4,6 +4,7 @@ module.exports = ->
     when 'build' then require('./commands/build')()
     when 'spec' then require('./commands/spec')()
     when 'spec-ci' then require('./commands/spec-ci')()
+    when 'clean' then require('./commands/clean')()
     else
       console.error(helpText())
       process.exit(1)
