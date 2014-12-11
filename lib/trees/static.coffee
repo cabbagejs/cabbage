@@ -4,5 +4,8 @@ merge = require('./../util/merge')
 
 module.exports = ->
   merge(
-    pick('app/static', true, '/')
+    pick('vendor/static', true, '/'),
+    pick('app/static', true, '/'),
+    pick('vendor/img', true, '/img'),
+    pick('app/img', true, '/img')
   )
