@@ -17,6 +17,7 @@ describe 'JavaScript', ->
       /* and is this */
       var thisExample = "Another great test";
       """
+    Initially (done) -> build(done)
 
     Then -> expect(@result).to.contain("Another great test")
     And -> expect(@result).not.to.contain("this is a comment")
