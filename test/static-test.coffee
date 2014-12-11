@@ -2,7 +2,7 @@ require('./support/spec-helper')
 
 build = require('./support/build')
 
-describe 'static tests', ->
+describe 'Static file paths', ->
   When (done) -> build(done)
 
   describe 'app/static', ->
