@@ -11,4 +11,4 @@ module.exports = ->
       extensions: ["us"]
       compileFunction: _.template
       context: config.pages.context
-  , "cabbage/app/pages")
+  , "#{pick.namespace}/app/pages")
