@@ -1,4 +1,4 @@
-userRequire = require('./user-require')
+userRequire = require('./../util/user-require')
 broccoli = userRequire('broccoli')
 path = require('path')
 rimraf = require('rimraf')
