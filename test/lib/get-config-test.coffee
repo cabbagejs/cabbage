@@ -14,7 +14,6 @@ describe 'Config', ->
   context 'user overridden app property', ->
     Given -> replaceFile 'config/application.js', """
       module.exports = function() {
-        console.log("ZOMG")
         return {
           pages: {
             context: {
