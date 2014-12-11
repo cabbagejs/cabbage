@@ -21,3 +21,7 @@ describe 'static tests', ->
     describe 'vendor/img', ->
       Given -> addFile('vendor/img/d', 'D')
       Then -> readFile('dist/img/d') == 'D'
+
+    describe 'vendor/webfonts', ->
+      Given -> addFile('vendor/webfonts/e', 'E')
+      Then -> readFile('dist/webfonts/e') == 'E'
