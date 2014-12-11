@@ -5,6 +5,7 @@ global.Finally = after
 # Lazy global conveniences are lazy
 global.expect = require('chai').expect
 global.fs = require('fs')
+global.addFile = require('./add-file')
 
 # Create a project for all the tests to run in and use
 createCabbageProject = require('./create-cabbage-project')
