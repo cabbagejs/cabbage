@@ -4,12 +4,13 @@ coffee = require('broccoli-coffee')
 merge = require('./../util/merge')
 pick = require('./../util/pick')
 concat = require('./../util/concat')
-config = require('./../util/config')()
+configResolver = require('./../util/config')
 env = require('./../util/env')()
 templates = require('./templates')
 uglify = require('./../util/js/uglify')
 
 module.exports = ->
+  config = configResolver()
   scripts = coffee(merge(
     pick("vendor/js"),
     merge(pick("app/js"), templates()),

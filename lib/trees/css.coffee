@@ -4,7 +4,7 @@ sass = require('./../util/css/sass')
 merge = require('./../util/merge')
 pick = require('./../util/pick')
 concat = require('./../util/concat')
-config = require('./../util/config')()
+config = require('./../util/config')
 
 module.exports = ->
   styles = merge(
@@ -12,4 +12,4 @@ module.exports = ->
     pick("app/css")
   )
 
-  minify(concat(merge(styles, sass(styles)), "css", config.concat.css))
+  minify(concat(merge(styles, sass(styles)), "css", config().concat.css))

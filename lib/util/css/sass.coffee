@@ -2,11 +2,12 @@ _ = require('underscore')
 sass = require('broccoli-sass')
 
 merge = require('./../merge')
-config = require('./../config')()
+configResolver = require('./../config')
 pick = require('./../pick')
 exists = require('./../exists')
 
 module.exports = (inputTree) ->
+  config = configResolver()
   return unless main = _(config.files.sass.main).find(exists)
   sass([sassLoadPaths()], "#{pick.namespace}/#{main}", "#{pick.namespace}/#{config.files.sass.generatedApp}")
 
