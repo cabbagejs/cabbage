@@ -6,7 +6,12 @@ pick = require('./../util/pick')
 NAMESPACE = "#{pick.namespace}/app/js/templates"
 
 module.exports = ->
-  clientSideTemplates pick("app/templates", true, NAMESPACE),
-    extensions: ["us"]
-    compileFunction: _.template
-    namespace: NAMESPACE
+  clientSideTemplates(
+    pick("app/templates", true, NAMESPACE)
+    underscoreConfig()
+  )
+
+underscoreConfig = ->
+  extensions: ["us"]
+  compileFunction: _.template
+  namespace: NAMESPACE

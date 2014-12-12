@@ -1,10 +1,7 @@
 pick = require('./../util/pick')
 merge = require('./../util/merge')
 
-configResolver = require('./../util/config')
-
-module.exports = ->
-  config = configResolver()
+module.exports = (config) ->
   merge(
     pick('vendor/static', true, '/'),
     pick('app/static', true, '/'),
