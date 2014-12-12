@@ -1,9 +1,9 @@
-require('./support/spec-helper')
-
-build = require('./support/build')
+build = require('./../../../support/spec-helper')
 
 describe 'Static file paths', ->
-  When (done) -> build(done)
+  Given -> @subject = require('./build-helper')
+
+  When (done) -> @subject(done)
 
   describe 'app/static', ->
     Around -> addFile('app/static/a', 'A')

@@ -1,6 +1,6 @@
 path = require('path')
 
-build = require('./../../lib/commands/build')
+build = require('./../../../../lib/commands/build')
 
 module.exports = (cb) ->
   build "dist", (err, builder) ->

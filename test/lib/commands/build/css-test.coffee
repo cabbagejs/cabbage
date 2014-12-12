@@ -1,10 +1,10 @@
-require('./support/spec-helper')
-
-build = require('./support/build')
+build = require('./../../../support/spec-helper')
 
 describe 'CSS', ->
+  Given -> @subject = require('./build-helper')
+
   context 'Hello, World', ->
-    Given (done) -> build(done)
+    Given (done) -> @subject(done)
     When -> @result = readFile("dist/css/app.css")
     Then -> expect(@result).to.contain("background-color:#efefef")
 
@@ -13,7 +13,7 @@ describe 'CSS', ->
       body
         width: 80%
       """
-    Given (done) -> build(done)
+    Given (done) -> @subject(done)
     When -> @result = readFile("dist/css/app.css")
     Then -> expect(@result).to.contain("background-color:#efefef")
     And -> expect(@result).to.contain("width:80%")
