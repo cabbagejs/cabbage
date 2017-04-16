@@ -52,7 +52,6 @@ npm install
 
 cd ../cabbage-cli
 npm install
-npm link
 
 cd ../blueprint-simple
 npm install --save-dev broccoli
